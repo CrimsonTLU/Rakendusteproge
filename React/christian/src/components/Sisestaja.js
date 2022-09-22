@@ -1,7 +1,7 @@
 import { createTheme, TextField, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 
-export default function InputStuff(){
+export default function Sisestaja(){
 
     const [text, setText] = useState("");
     const handleChange = (e) => {
