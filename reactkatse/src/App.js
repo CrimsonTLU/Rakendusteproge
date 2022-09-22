@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Arvutaja from './components/Arvutaja';
 
 import './App.css';
+
+// Paigaldasime MUI (mui.com)
 
 /*
   Peab olema parent element returnis,
@@ -13,11 +14,11 @@ import './App.css';
 */
 
 const App = () => {
+  // Pikemalt välja kirjutatuna
   // const [show, setShow] = React.useState(true)
 
+  // Lühemalt välja kirjutatuna
   const [show, setShow] = useState(true)
-
-  const [tulemus, arvutaTulemus] = useState(0);
 
   return (
     <Box
@@ -32,12 +33,10 @@ const App = () => {
     >
       {/* Siin puudub nimi, ehk tuleb defaultPropsist */}
       <PropExample/>
-      <PropExample name='Chris'/>
-      <PropExample2 name={'Chris'}/>
-      <PropExample3 name="Chris"/>
-      <PropExample4 name={"Chris"}/>
-
-      <Arvutaja />
+      <PropExample name='Raimo'/>
+      <PropExample2 name={'Raimo'}/>
+      <PropExample3 name="Raimo"/>
+      <PropExample4 name={"Raimo"}/>
 
       <Button 
         variant="contained" 
@@ -125,7 +124,5 @@ const PropExample3 = ({ name }) => <h1>Hello {name}</h1>
 
 // Teine võimalus defaultPropsiks 
 const PropExample4 = ({ name = 'John Doe' }) => <h1>Hello {name}</h1>
-
-const Summa = ({ summa }) => <h1>Summa on {summa}</h1>
 
 // PropTypes järgmine tund lisada
