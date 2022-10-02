@@ -17,6 +17,9 @@ const Layout = () => {
           <li>
             <Link to="/contactform">Contact Form</Link>
           </li>
+          <li>
+            <Link to="/crud">CRUD</Link>
+          </li>
         </ul>
       </nav>
 

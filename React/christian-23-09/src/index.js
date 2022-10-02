@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "./index.css"
-//import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./pages/Layout"
@@ -9,6 +8,7 @@ import Home from "./pages/Home"
 import Main from "./pages/Main"
 import Table from "./pages/Table"
 import ContactForm from "./pages/ContactForm"
+import Crud from "./pages/Crud"
 import NoPage from "./pages/NoPage"
 
 export default function App() {
@@ -34,6 +34,10 @@ export default function App() {
           <Route
             path="contactform"
             element={<ContactForm />}
+          />
+          <Route
+            path="crud"
+            element={<Crud />}
           />
           <Route
             path="*"
