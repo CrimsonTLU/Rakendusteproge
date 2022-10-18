@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, createContext } from "react"
 import Box from "@mui/material/Box"
 
 import "./App.css"
@@ -6,11 +6,11 @@ import Counter from "./components/Counter"
 import Toggle from "./components/Toggle"
 import { Button } from "@mui/material"
 
-const UserContext = createContext()
+export const UserContext = createContext()
 
 const App = () => {
   const [show, setShow] = useState(true)
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState("Chris")
 
   return (
     <UserContext.Provider value={[currentUser, setCurrentUser]}>

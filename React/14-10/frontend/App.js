@@ -1,20 +1,41 @@
-import React, { useState } from "react"
-import Auth from "../backend/Auth"
-import AuthContext from "../backend/contexts/userContext.js"
+import React, { useState, createContext } from "react"
+import Box from "@mui/material/Box"
+
+import "./App.css"
+import Counter from "./components/Counter"
+import Toggle from "./components/Toggle"
+import { Button } from "@mui/material"
+
+export const UserContext = createContext()
 
 const App = () => {
-  //using the state to dynamicallly pass the values to the context
+  const [show, setShow] = useState(true)
+  const [currentUser, setCurrentUser] = useState("Chris")
 
-  const [authstatus, setauthstatus] = useState(false)
-  const login = () => {
-    setauthstatus(true)
-  }
   return (
-    <React.Fragment>
-      <AuthContext.Provider value={{ status: authstatus, login: login }}>
-        <Auth />
-      </AuthContext.Provider>
-    </React.Fragment>
+    <UserContext.Provider value={[currentUser, setCurrentUser]}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "25px",
+          height: "100vh"
+        }}
+      >
+        <Counter />
+        {show && <Toggle />}
+        <Button
+          color="error"
+          variant="contained"
+          onClick={() => setShow(!show)}
+        >
+          Toggle toggle
+        </Button>
+      </Box>
+    </UserContext.Provider>
   )
 }
+
 export default App

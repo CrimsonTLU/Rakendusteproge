@@ -1,6 +1,10 @@
+import React, { Fragment, useContext } from "react"
 import { Outlet, Link } from "react-router-dom"
+import { UserContext } from "../App.js"
 
-const Layout = () => {
+const Layout = ({ children }) => {
+  //const [currentUser, setCurrentUser] = useContext(UserContext)
+
   return (
     <>
       <nav>
